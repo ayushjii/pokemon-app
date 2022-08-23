@@ -2,7 +2,7 @@ import React from "react";
 
 export const Aboutpokemon = (about ) => {
   return (
-    <div>
+    <div className="">
       <p>
         <b>height</b> is <b>{about.heightpok * 10} cm</b>
       </p>
@@ -10,11 +10,11 @@ export const Aboutpokemon = (about ) => {
         <b>weight</b> is <b>{about.weightpok * 0.1} Kg</b>
       </p>
 
-      <h3>Stat</h3>
+      <h3>Statistic</h3>
 
       <p>
         <b>
-          {about.pokestat1} : {about.posbs1}
+          {about.pokstat1} : {about.posbs1}
         </b>
       </p>
       <p>

@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { Aboutpokemon } from "./Aboutpokemon";
 
 export const Mypokemon = (prop) => {
-  const styles = `thumb-container${prop.type}`;
+  const style = `thumb-container ${prop.type}`;
   const [show, setshow] = useState(false);
   return (
-    <div className={styles}>
-      <div>
+    <div className={style}>
+      <div className="number">
         <small>#0{prop.id}</small>
       </div>
       <img src={prop.image} alt={prop.name} />
-      <div>
+      <div className="detail-wrapper">
         <h3>{prop.name.toUpperCase()}</h3>
         <small>Type : {prop.type}</small>
-        <button className="" onClick={() => setshow(!show)}>
+        <button className="pokeinfo" onClick={() => setshow(!show)}>
           {show === true ? "less......" : "more......"}
         </button>
         {show === true ? (
