@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Mypokemon } from "./Components/Mypokemon";
-// import PokemonThumbnail from "./Components/PokemonThumbnail";
+
 
 function App() {
   const [allPokemons, setAllPokemons] = useState([]);

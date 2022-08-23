@@ -1,4 +1,4 @@
-import React , { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Mypokemon } from "./Components/Mypokemon";
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
     const data = await res.json();
     setLoadPoke(data.next);
 
-    function createPokemonObject(props) {
-      props.forEach(async (pokemon) => {
+    function createPokemonObject(result) {
+      result.forEach(async (pokemon) => {
         const res = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
@@ -20,15 +20,17 @@ function App() {
         setAllPokemons((currentlist) => [...currentlist, data]);
       });
     }
-    createPokemonObject(data.props);
+    createPokemonObject(data.result);
     await console.log(allPokemons);
   };
   useEffect(() => {
     getAllPokemons();
   }, []);
+
+
   return (
     <div className="App">
-      <h1> Pokemon Pokemon</h1>
+      <h1>Pokemon Pokemon</h1>
 
       <div className="">
         <div className="">
