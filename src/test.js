@@ -1,45 +1,46 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
 import { Mypokemon } from "./Components/Mypokemon";
+// import PokemonThumbnail from "./Components/PokemonThumbnail";
 
-function App() {
-  const [allPoke, setAllPoke] = useState([]);
+function Appp() {
+  const [allPokemons, setAllPokemons] = useState([]);
   const [loadPoke, setLoadPoke] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=20"
   );
-  const getallpokemons = async () => {
+  const getAllPokemons = async () => {
     const res = await fetch(loadPoke);
     const data = await res.json();
     setLoadPoke(data.next);
 
-    function createpokemonobject(result) {
+    function createPokemonObject(result) {
       result.forEach(async (pokemon) => {
         const res = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
         const data = await res.json();
-        setAllPoke((currentlist) => [...currentlist, data]);
+        setAllPokemons((currentList) => [...currentList, data]);
       });
     }
-    createpokemonobject(data.props);
-    await console.log(allPoke);
+    createPokemonObject(data.results);
+    await console.log(allPokemons);
   };
   useEffect(() => {
-    getallpokemons();
+    getAllPokemons();
   }, []);
-  return (
-    <div className="App">
-      <h1> Pokemon Pokemon</h1>
 
-      <div className="">
-        <div className="">
-          {allPoke.map((pokemon, index) => (
-            <Mypokemon 
+  return (
+    <div className="app-container">
+      <h1>Pokemon Kingdom .</h1>
+
+      <div className="pokemon-container">
+        <div className="all-container">
+          {allPokemons.map((pokemon, index) => (
+            <Mypokemon
               id={pokemon.id}
               name={pokemon.name}
-              image={pokemon.sprites.other.dream_world.font_default}
+              image={pokemon.sprites.other.dream_world.front_default}
               type={pokemon.types[0].type.name}
-              key= {index}
+              key={index}
               height={pokemon.height}
               weight={pokemon.weight}
               stat1={pokemon.stats[0].stat.name}
@@ -57,13 +58,12 @@ function App() {
             />
           ))}
         </div>
-        <button className="" onClick={() => getallpokemons()}>
-          More Pokemon
+        <button className="load-more" onClick={() => getAllPokemons()}>
+          More Pokemons
         </button>
       </div>
- 
     </div>
   );
 }
 
-export default App;
+export default Appp;
