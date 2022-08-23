@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { Mypokemon } from "./Components/Mypokemon";
 
 function App() {
@@ -7,13 +6,13 @@ function App() {
   const [loadPoke, setLoadPoke] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=20"
   );
-  const getallpokemons = async () => {
+  const getAllPokemons = async () => {
     const res = await fetch(loadPoke);
     const data = await res.json();
     setLoadPoke(data.next);
 
-    function createpokemonobject(result) {
-      result.forEach(async (pokemon) => {
+    function createPokemonObject(props) {
+      props.forEach(async (pokemon) => {
         const res = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
@@ -21,11 +20,11 @@ function App() {
         setAllPoke((currentlist) => [...currentlist, data]);
       });
     }
-    createpokemonobject(data.props);
+    createPokemonObject(data.props);
     await console.log(allPoke);
   };
   useEffect(() => {
-    getallpokemons();
+    getAllPokemons();
   }, []);
   return (
     <div className="App">
@@ -37,9 +36,9 @@ function App() {
             <Mypokemon 
               id={pokemon.id}
               name={pokemon.name}
-              image={pokemon.sprites.other.dream_world.font_default}
+              image={pokemon.sprites.other.dream_world.front_default}
               type={pokemon.types[0].type.name}
-              key= {index}
+              key={index}
               height={pokemon.height}
               weight={pokemon.weight}
               stat1={pokemon.stats[0].stat.name}
@@ -57,11 +56,10 @@ function App() {
             />
           ))}
         </div>
-        <button className="" onClick={() => getallpokemons()}>
+        <button className="" onClick={() => getAllPokemons()}>
           More Pokemon
         </button>
       </div>
- 
     </div>
   );
 }

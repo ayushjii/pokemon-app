@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Mypokemon } from "./Components/Mypokemon";
 // import PokemonThumbnail from "./Components/PokemonThumbnail";
 
-function Appp() {
+function App() {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadPoke, setLoadPoke] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=20"
@@ -66,4 +66,4 @@ function Appp() {
   );
 }
 
-export default Appp;
+export default App;
