@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React , { useEffect, useState } from "react";
 import { Mypokemon } from "./Components/Mypokemon";
 
 function App() {
-  const [allPoke, setAllPoke] = useState([]);
+  const [allPokemons, setAllPokemons] = useState([]);
   const [loadPoke, setLoadPoke] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=20"
   );
@@ -17,11 +17,11 @@ function App() {
           `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
         );
         const data = await res.json();
-        setAllPoke((currentlist) => [...currentlist, data]);
+        setAllPokemons((currentlist) => [...currentlist, data]);
       });
     }
     createPokemonObject(data.props);
-    await console.log(allPoke);
+    await console.log(allPokemons);
   };
   useEffect(() => {
     getAllPokemons();
@@ -32,7 +32,7 @@ function App() {
 
       <div className="">
         <div className="">
-          {allPoke.map((pokemon, index) => (
+          {allPokemons.map((pokemon, index) => (
             <Mypokemon 
               id={pokemon.id}
               name={pokemon.name}
