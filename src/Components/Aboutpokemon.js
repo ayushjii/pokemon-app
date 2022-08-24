@@ -1,10 +1,17 @@
 import React from "react";
+import { useParams } from 'react-router-dom'
+
 
 export const Aboutpokemon = (about ) => {
+  const params = useParams();
+  const {name} = params
+  // console.warn(name) 
+
   return (
     <div className="">
-      <p>
-        <b>height</b> is <b>{about.heightpok * 10} cm</b>
+   name : { name}
+      <p className="text-white">
+        <b >height</b> is <b>{about.heightpok * 10} cm</b>
       </p>
       <p>
         <b>weight</b> is <b>{about.weightpok * 0.1} Kg</b>
