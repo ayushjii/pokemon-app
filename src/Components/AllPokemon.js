@@ -5,7 +5,6 @@ import Mypokemon from "./Mypokemon";
 
 function All() {
   const [allPokemons, setAllPokemons] = useState([]);
-  // const navigate = useNavigate();
 
   useEffect(() => {
     api.get().then(({ data }) => {
@@ -14,14 +13,14 @@ function All() {
     });
   }, []);
 
-
   return (
     <>
-      <div className="book-list">
+      <div className="">
         {allPokemons.map((pokemon) => (
           <button key={pokemon.name}>
             <Link to={"/pokemon/" + pokemon.name}>
               <Mypokemon name={pokemon.name} />
+              <p className="">{pokemon.name}</p>
             </Link>
           </button>
         ))}
