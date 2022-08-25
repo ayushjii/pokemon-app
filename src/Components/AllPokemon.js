@@ -19,8 +19,8 @@ function All() {
         {allPokemons.map((pokemon) => (
           <button key={pokemon.name}>
             <Link to={"/pokemon/" + pokemon.name}>
-              <Mypokemon name={pokemon.name} />
-              <p className="">{pokemon.name}</p>
+            {
+              <Mypokemon name={pokemon.name}/>}
             </Link>
           </button>
         ))}

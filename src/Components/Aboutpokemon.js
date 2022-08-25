@@ -1,5 +1,3 @@
-import "./index.css";
-import { Box, Button, LinearProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import api_details from "../API/Api_details";
