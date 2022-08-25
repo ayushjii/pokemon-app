@@ -9,7 +9,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<All />} />
           <Route exact path="/pokemon/:name" element={<Aboutpokemon />} />
-          <Route exact path="/pokemon" element={<Aboutpokemon />} />
+          <Route exact path="/pokemon/" element={<Aboutpokemon />} />
         </Routes>
     </Router>
   );

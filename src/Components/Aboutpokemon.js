@@ -22,6 +22,8 @@ function Aboutpokemon() {
       });
   }, [name]);
 
+  
+
   return (
     <>
       {error && <ErrorPage />} 
