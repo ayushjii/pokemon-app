@@ -1,70 +1,165 @@
-import React from "react";
+import "./index.css";
+import { Box, Button, LinearProgress, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import api_details from '../API/Api_details'
+import { ErrorPage } from "./ErrorPage";
 
-const Aboutpokemon = ({
-heightpok,
-weightpok,
-pokstat1,
-pokstat2,
-pokstat3,
-pokstat4,
-pokstat5,
-pokstat6,
-posbs1,
-posbs2,
-posbs3,
-posbs4,
-posbs5,
-posbs6,
-}) => {
-return (
-	<div className="desc">
-	<p>
-		<b>Height</b> is <b>{heightpok * 10} cm.</b>
-	</p>
 
-	<p>
-		<b>Weight</b> is <b>{weightpok * 0.1} kg</b>
-	</p>
+function Aboutpokemon() {
+  const { name } = useParams();
+  const [list, setList] = useState([]);
+  const [error, setError] = useState(!name);
 
-	<h3>Stat</h3>
+  useEffect(() => {
+    api_details
+      .get(name)
+      .then(({ data }) => {
+        setList(data);
+      })
+      .catch(() => {
+        setError(true);
+      });
+  }, [name]);
 
-	<p>
-		<b>
-		{pokstat1} : {posbs1}
-		</b>
-	</p>
+  return (
+    <>
+      {error && <ErrorPage />} 
 
-	<p>
-		<b>
-		{pokstat2} : {posbs2}
-		</b>
-	</p>
+      {!error && (
+        <Box className="box">
+          <Box className="informacoesUm">
+            <Box className="nome">
+              <Typography variant="h4" className="nomes" sx={{ mt: 1 }}>
+                {list.name}
+              </Typography>
+            </Box>
+            <Box className="imagen">
+              <img
+                src={list?.sprites?.front_default}
+                alt={list.name}
+                width="70%"
+              />
+            </Box>
+            <Box className="tipo">
+              <Typography variant="h5" sx={{ m: 1 }} className="nomes">
+                #{list.id}
+              </Typography>
 
-	<p>
-		<b>
-		{pokstat3} : {posbs3}
-		</b>
-	</p>
+              <Typography variant="h5" sx={{ m: 1 }} className="nomes">
+                Pokemon type:{" "}
+                {list?.types?.map((item) => item.type.name.concat(" "))}
+              </Typography>
+            </Box>
 
-	<p>
-		<b>
-		{pokstat4} : {posbs4}
-		</b>
-	</p>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Link to={"/"}>
+                <Button
+                  variant="contained"
+                  // endIcon={<SendIcon />}
+                  size="large"
+                  sx={{
+                    mt: 4,
+                  }}
+                >
+                  Retornar para home
+                </Button>
+              </Link>
+            </Box>
+          </Box>
 
-	<p>
-		<b>
-		{pokstat5} : {posbs5}
-		</b>
-	</p>
+          <Box className="informacoesDois">
+            <Box className="infos">
+              <Typography
+                variant="h4"
+                sx={{
+                  textAlign: "center",
+                }}
+                className="titulos"
+              >
+                Informações
+              </Typography>
+              <Box className="estatisticas">
+                {list?.stats?.map((item, index) => {
+                  return (
+                    <Box key={item.stat.name} className="status">
+                      <Typography variant="h6" sx={{ ml: 1 }} className="nomes">
+                        {item.stat.name}: {item.base_stat}
+                      </Typography>
 
-	<p>
-		<b>
-		{pokstat6} : {posbs6}
-		</b>
-	</p>
-	</div>
-);
-};
+                      <LinearProgress
+                        variant="determinate"
+                        value={item.base_stat}
+                        sx={{
+                          width: 400,
+                          height: 10,
+                          mr: 2,
+                          background: "#eeeeee",
+                        }}
+                      />
+                    </Box>
+                  );
+                })}
+              </Box>
+              <Typography
+                variant="h4"
+                sx={{
+                  textAlign: "center",
+                }}
+                className="titulos"
+              >
+                Golpes
+              </Typography>
+              <Box className="golpes">
+                {list?.moves?.map((item) => {
+                  return (
+                    <Box
+                      key={item.move.name}
+                      sx={{
+                        p: 1,
+                        m: 1,
+                        bgcolor: "background.paper",
+                        borderRadius: 1,
+                      }}
+                      className="golpesBotoes"
+                    >
+                      <Button
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#004953",
+                        }}
+                      >
+                        {item.move.name}
+                      </Button>
+                    </Box>
+                  );
+                })}
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row-reverse",
+                p: 1,
+                m: 1,
+                bgcolor: "background.paper",
+                borderRadius: 1,
+              }}
+            >
+              {/* <RandomPokemons />
+              <RandomPokemons /> */}
+            </Box>
+          </Box>
+        </Box>
+      )}
+    </>
+  );
+}
 
 export default Aboutpokemon;

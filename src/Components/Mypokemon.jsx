@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import Aboutpokemon from "./Aboutpokemon";
+import React from "react";
+// import Aboutpokemon from "./Aboutpokemon";
 
 const Mypokemon = ({
 id,
 name,
 image,
 type,
-height,
-weight,
-stat1,
-stat2,
-stat3,
-stat4,
-stat5,
-stat6,
-bs1,
-bs2,
-bs3,
-bs4,
-bs5,
-bs6,
+// height,
+// weight,
+// stat1,
+// stat2,
+// stat3,
+// stat4,
+// stat5,
+// stat6,
+// bs1,
+// bs2,
+// bs3,
+// bs4,
+// bs5,
+// bs6,
 }) => {
 const style = `thumb-container ${type}`;
-const [show, setShow] = useState(false);
+// const [show, setShow] = useState(false);
 return (
 	<div className={style}>
 	<div className="number">
@@ -32,7 +32,7 @@ return (
 	<div className="detail-wrapper">
 		<h3>{name.toUpperCase()}</h3>
 		<small>Type : {type}</small>
-		<button className="pokeinfo"
+		{/* <button className="pokeinfo"
 		onClick={() => setShow(!show)}>
 		{show === true ? "Know less..." : "Know more..."}
 		</button>
@@ -55,7 +55,7 @@ return (
 		/>
 		) : (
 		<></>
-		)}
+		)} */}
 	</div>
 	</div>
 );
