@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api_details from "../API/Api_details";
-import { ErrorPage } from "./ErrorPage";
+import  ErrorPage  from "./ErrorPage.JS";
 
 function Aboutpokemon() {
   const { name } = useParams();
