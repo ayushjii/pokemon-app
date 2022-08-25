@@ -20,7 +20,7 @@ function All() {
           <button key={pokemon.name}>
             <Link to={"/pokemon/" + pokemon.name}>
             {
-              <Mypokemon name={pokemon.name}/>}
+              <Mypokemon name={pokemon.name} />}
             </Link>
           </button>
         ))}
