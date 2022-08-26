@@ -8,6 +8,7 @@ const Mypokemon = ({ name }) => {
     api_details.get(name).then(({ data }) => {
       setList(data);
     });
+    // eslint-disable-next-line
   }, []);
 
   const style = `thumb-container ${list?.types?.map((item) =>
