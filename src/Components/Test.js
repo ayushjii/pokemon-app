@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroller";
-import Mypokemon from "./Mypokemon";
 
 export default class App extends Component {
   state = {
-    url: "https://pokeapi.co/api/v2/pokemon/?limit=10",
+    url: "https://pokeapi.co/api/v2/pokemon/?limit=200",
     pokemon: [],
     itemsCountPerPage: 20,
     activePage: 1
@@ -49,8 +48,8 @@ export default class App extends Component {
                   style={{ borderBottom: "1px solid", padding: "10px" }}
                   key={pokemon.name + i}
                 >
-                                 <Mypokemon name={pokemon.name} />
-
+                  <div>{pokemon.name}</div>
+                  <div>{pokemon.url}</div>
                 </div>
               ))}
             </InfiniteScroll>
