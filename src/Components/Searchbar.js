@@ -13,7 +13,7 @@ export const Searchbar = () => {
     e.preventDefault();
     Navigate(`/pokemon/${value}`);
   }
-  
+
   useEffect(() => {
     API_search.get().then(({ data }) => {
       const pokemondata = data.results.map((all) => ({
@@ -23,7 +23,6 @@ export const Searchbar = () => {
       setsearch(pokemondata);
     });
   }, []);
- 
 
   return (
     <>
@@ -38,9 +37,7 @@ export const Searchbar = () => {
           options={search}
           sx={{
             width: "24rem",
-          
           }}
-          
           onChange={(e, newEvent) => setvalue(newEvent.name)}
           renderInput={(props) => (
             <TextField

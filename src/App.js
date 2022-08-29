@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aboutpokemon from "./Components/Aboutpokemon";
 import All from "./Components/AllPokemon";
 
-function App() {
+const App = () => {
   return (
     <Router>
         <Routes>
-          <Route path="/" element={<All />} />
           <Route path="/pokemon/" element={<Aboutpokemon />} />
           <Route path="/pokemon/:name" element={<Aboutpokemon />} />
+          <Route path="/" element={<All />} />
         </Routes>
     </Router>
   );
