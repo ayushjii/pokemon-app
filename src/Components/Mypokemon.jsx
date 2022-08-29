@@ -20,9 +20,9 @@ const Mypokemon = ({ name }) => {
       <div className="number">
         <small>#{list.id}</small>
       </div>
-      <h3>{list.name}</h3>
-      {list?.types?.map((item) => item.type.name.concat(" "))}
-      <img src={list?.sprites?.front_default} alt={list.name} width="70%" />
+      <h1>{list.name}</h1>
+      <img src={list?.sprites?.front_default} alt={list.name} />
+      <h3>{list?.types?.map((item) => item.type.name.concat(" "))}</h3>
     </div>
   );
 };

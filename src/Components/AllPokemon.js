@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroller";
 import { Link } from "react-router-dom";
 import { API } from "../API/api";
 import Mypokemon from "./Mypokemon";
+import {Searchbar}  from "./Searchbar";
 import Spinner from "./Spinner.js";
 
 
@@ -21,7 +22,7 @@ export default class All extends Component {
         return {
           pokemon: [...prevState.pokemon, ...res.data.results],
           url: res.data.next,
-        };
+        }; 
       });
     });
   };
@@ -29,6 +30,7 @@ export default class All extends Component {
   render() {
     return (
       <React.Fragment>
+      <Searchbar />
         {this.state.pokemon ? (
           <div className="row">
             <InfiniteScroll
