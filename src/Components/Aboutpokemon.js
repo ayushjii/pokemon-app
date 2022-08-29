@@ -34,8 +34,8 @@ function Aboutpokemon() {
           <div className="m-3">
             <div className="m-3">
               <Link to={"/"}>
-                <button className="flex">
-                  <TiArrowBack /> Back
+                <button className="flex text-blue-700">
+                  <TiArrowBack size={20} /> Back
                 </button>
               </Link>
             </div>
@@ -90,7 +90,7 @@ function Aboutpokemon() {
                   {list?.moves?.map((item) => {
                     return (
                       <div key={item.move.name} className="moves">
-                        <button className="hover:bg-cyan-600  bg-cyan-500 rounded-md p-1 m-1">
+                        <button className="hover:bg-cyan-600 hover:shadow-69xl bg-cyan-500 rounded-md p-1 m-1">
                           {item.move.name}
                         </button>
                       </div>
@@ -102,7 +102,7 @@ function Aboutpokemon() {
           </div>
           <div className="mr-8 mt-8">
             <div className={style}>
-              <img src={list?.sprites?.front_default} alt={list.name} />
+              <img src={list?.sprites?.front_default} className="w-52 h-52" alt={list.name} />
             </div>
             <div>
               <h1 className="capitalize font-bold text-xl">

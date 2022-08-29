@@ -26,12 +26,12 @@ export const Searchbar = () => {
 
   return (
     <>
-      <div className="text-center mt-8 text-8xl text-black">
-        <h1>Pokemon App</h1>
+      <div className="text-center m-0 text-8xl">
+        <h1 className="text-white p-6 backdrop-blur-sm">Pokemon App</h1>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="my-12 gap-8 flex justify-center text-center "
+        className="my-12 gap-8 flex justify-center text-center"
       >
         <Autocomplete
           options={search}
@@ -41,6 +41,7 @@ export const Searchbar = () => {
           onChange={(e, newEvent) => setvalue(newEvent.name)}
           renderInput={(props) => (
             <TextField
+              className="hover:shadow-99xl shadow"
               placeholder="Pokemon Name"
               sx={{
                 backgroundColor: "white",
@@ -54,7 +55,7 @@ export const Searchbar = () => {
           )}
         />
 
-        <button type="submit">
+        <button type="submit" className="shadow hover:shadow-99xl">
           <FcSearch className="bg-white rounded-lg" size={55} />
         </button>
       </form>

@@ -4,23 +4,10 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-body {
-  margin: 0;
   font-family: "Satisfy", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./images/poki.png)
+  background-image: url(./images/poki.png);
 }
 
 code {
@@ -54,8 +41,8 @@ code {
 .fairy {
   background-image: linear-gradient(
     to top,
-    #ff9a9e 0%,
-    #fecfef 99%,
+    #ff9a9e 20%,
+    #fecfef 69%,
     #fecfef 100%
   );
 }
@@ -82,129 +69,38 @@ code {
 .psychic {
   background-image: linear-gradient(120deg, orange 0%, purple 100%);
 }
-
-.app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 3rem 1rem;
+.ice {
+  background-image: linear-gradient(120deg, cyan 0%, white 100%);
+}
+.dragon {
+  background-image: linear-gradient(120deg, red 0%, lightgreen 100%);
+}
+.dark {
+  background-image: linear-gradient(120deg, gray 0%, rgb(31, 23, 23) 100%);
+}
+.steel {
+  background-image: linear-gradient(120deg, silver 0%, rgb(189, 172, 172) 100%);
+}
+.flying {
+  background-image: linear-gradient(120deg, orange 0%, white 100%);
 }
 
-.app-container h1 {
-  width: 0ch;
-  color: rgb(16, 166, 236);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: text 4s steps(15) infinite alternate;
-}
-
-@keyframes text {
-  0% {
-    width: 0ch;
-  }
-  50% {
-    width: 15ch;
-    color: rgb(218, 55, 5);
-  }
-}
-
-.pokemon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.all-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.thumb-container {
+.type {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem 0.2rem;
-  margin: 0.3rem;
+  margin: 0.5rem 0.7rem;
   border: 1px solid #efefef;
   border-radius: 2rem;
   min-width: 160px;
   text-align: center;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.89);
 }
-
-.thumb-container :hover {
-  margin: 0.7rem 0;
+.type:hover{
+  box-shadow: 6px 6px 6px rgba(1,0,0,0.2);
 }
-
-h3 {
-  margin-bottom: 0.2rem;
-}
-
-.thumb-container .number {
-  border-radius: 1rem;
-  padding: 0.2rem 0.4rem;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.thumb-container img {
-  width: 200px;
-  height: 200px;
-}
-
-.thumb-container small {
-  text-transform: capitalize;
-}
-
-.detail-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.detail-wrapper button {
-  color: rgb(22, 22, 22);
-  padding: 0.5rem;
-  margin-top: 1rem;
-  border: none;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.185);
-}
-
-.load-more {
-  background-color: #76daff;
-  background-image: linear-gradient(315deg, #76daff 0%, #fcd000 74%);
-  border-radius: 6px;
-  border: 1px solid #c6c6c6;
-  color: #444;
-  padding: 0.5rem 1.5rem;
-  min-width: 20%;
-  margin-top: 1rem;
-  font-family: "Satisfy", cursive;
-}
-
-.pokeinfo {
-  margin: 0 25px;
-  font-family: "Satisfy", cursive;
-  background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
-}
-
-.pokeinfo:hover {
-  background-image: linear-gradient(
-    -20deg,
-    #ddd6f3 0%,
-    #faaca8 100%,
-    #faaca8 100%
-  );
-}
-
-
-.moves:nth-child(n+7){
-  display: none
+.moves:nth-child(n + 7) {
+  display: none;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aboutpokemon from "./Components/Aboutpokemon";
-import All from "./Components/AllPokemon";
+import { Home } from "./Components/Home";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
         <Routes>
           <Route path="/pokemon/" element={<Aboutpokemon />} />
           <Route path="/pokemon/:name" element={<Aboutpokemon />} />
-          <Route path="/" element={<All />} />
+          <Route path="/" element={<Home />} />
         </Routes>
     </Router>
   );

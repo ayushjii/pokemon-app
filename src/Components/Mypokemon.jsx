@@ -11,17 +11,21 @@ const Mypokemon = ({ name }) => {
     // eslint-disable-next-line
   }, []);
 
-  const style = `thumb-container ${list?.types?.map((item) =>
+  const style = `type ${list?.types?.map((item) =>
     item.type.name.concat(" ")
   )}`;
 
   return (
     <div className={style}>
-      <div className="number">
-        <small>#{list.id}</small>
+      <div className="rounded-2xl px-2 py-1 bg-white bg-opacity-40">
+        <small className="font-semibold">#{list.id}</small>
       </div>
-      <h1>{list.name}</h1>
-      <img src={list?.sprites?.front_default} alt={list.name} />
+      <h1 className="capitalize">{list.name}</h1>
+      <img
+        className="w-52 h-52"
+        src={list?.sprites?.front_default}
+        alt={list.name}
+      />
       <h3>{list?.types?.map((item) => item.type.name.concat(" "))}</h3>
     </div>
   );
