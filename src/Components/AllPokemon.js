@@ -21,16 +21,18 @@ export default class All extends Component {
         return {
           pokemon: [...prevState.pokemon, ...res.data.results],
           url: res.data.next,
-        }; 
+        };
       });
     });
   };
 
+  
   render() {
+
     return (
       <React.Fragment>
         {this.state.pokemon ? (
-          <div className="text-center">
+          <div className="text-center" >
             <InfiniteScroll
               pageStart={0}
               loadMore={this.loadPokemon}
@@ -38,11 +40,12 @@ export default class All extends Component {
               loader={<Spinner />}
             >
               {this.state.pokemon.map((pokemon, i) => (
-                <button key={i}>
-                  <Link to={"/pokemon/" + pokemon.name}>
-                    <Mypokemon name={pokemon.name} />
-                  </Link>
-                </button>
+                <>
+                  <button key={i}>
+                    <Mypokemon poki={pokemon} name={pokemon.name} />
+                  </button>
+                 
+                </>
               ))}
             </InfiniteScroll>
           </div>
