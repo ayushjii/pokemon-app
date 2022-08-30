@@ -1,8 +1,9 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API_search from "../API/apisearch";
 import { FcSearch } from "react-icons/fc";
+import { MdFolderSpecial } from "react-icons/md";
 
 export const Searchbar = () => {
   const [search, setsearch] = useState([]);
@@ -33,6 +34,13 @@ export const Searchbar = () => {
         onSubmit={handleSubmit}
         className="my-12 gap-8 flex justify-center text-center"
       >
+        <Link
+          className="shadow hover:shadow-99xl capitalize flex bg-white text-4xl rounded-xl px-0.5 items-center"
+          to={"/favorites"}
+        >
+          favorites
+          <MdFolderSpecial className="bg-white" size={55} />
+        </Link>
         <Autocomplete
           options={search}
           sx={{

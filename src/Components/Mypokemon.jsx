@@ -24,40 +24,53 @@ const Mypokemon = ({ poki, name }) => {
 
   console.log("favorites are : ", favorites);
 
+  const favoritesChecker = (id) => {
+    const boolean = favorites.some((book) => book.id === id);
+    return boolean;
+  };
+
   return (
     <>
-        <div className={style}>
-          <div className="rounded-2xl px-2 py-1 bg-white bg-opacity-40">
-            <small className="font-semibold">#{list.id}</small>
-          </div>
-          <h1 className="capitalize">{list.name}</h1>
-          <img
-            className="w-52 h-52"
-            src={list?.sprites?.front_default}
-            alt={list.name}
-          />
-          <h3>{list?.types?.map((item) => item.type.name.concat(" "))}</h3>
-          <div className="mt-0.5">
-            <Link to={"/pokemon/" + list.name}>
-              <button className="bg-white p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
-                <BiMessageSquareDetail size={25} />
-              </button>
-            </Link>
-            {/* <Link to={"/favorites"}> */}
+      <div className={style}>
+        <div className="rounded-2xl px-2 py-1 bg-white bg-opacity-40">
+          <small className="font-semibold">#{list.id}</small>
+        </div>
+        <h1 className="capitalize">{list.name}</h1>
+        <img
+          className="w-52 h-52"
+          src={list?.sprites?.front_default}
+          alt={list.name}
+        />
+        <h3>{list?.types?.map((item) => item.type.name.concat(" "))}</h3>
+        <div className="mt-0.5">
+          <Link to={"/pokemon/" + list.name}>
+            <button className="bg-white p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
+              <BiMessageSquareDetail size={25} />
+            </button>
+          </Link>
+          {favoritesChecker(list.id) ? (
             <button
-              onClick={() => addToFavorites(list.id)}
+              onClick={() => removeFromFavorites(list.id)}
+              className="bg-white p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
+            >
+              <BsFillHeartFill color="red" size={25} />
+            </button>
+          ) : (
+            <button
+              onClick={() => addToFavorites(list)}
               className="bg-white p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
             >
               <BsFillHeartFill size={25} />
             </button>
-            {/* </Link> */}
-            <Link to={"/war"}>
-              <button className="bg-white p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
-                <GiAxeSword size={25} />
-              </button>
-            </Link>
-          </div>
+          )}
+
+          <Link to={"/war"}>
+            <button className="bg-white p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
+              <GiAxeSword size={25} />
+            </button>
+          </Link>
         </div>
+      </div>
     </>
   );
 };
