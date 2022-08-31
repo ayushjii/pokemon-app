@@ -41,6 +41,13 @@ export const Searchbar = () => {
           favorites
           <MdFolderSpecial className="bg-white" size={55} />
         </Link>
+        <Link
+          className="shadow hover:shadow-99xl s capitalize flex bg-white text-4xl rounded-xl px-0.5 items-center"
+          to={"/war"}
+        >
+          war
+          <MdFolderSpecial className="bg-white" size={55} />
+        </Link>
         <Autocomplete
           options={search}
           sx={{

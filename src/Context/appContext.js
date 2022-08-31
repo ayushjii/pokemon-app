@@ -14,6 +14,7 @@ export const useAppContext = () => {
 
 const AppContextProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
+  const [war, setWar] = useState([]);
 
   const addToFavorites = (poke) => {
     const oldFavorites = [...favorites];
@@ -30,10 +31,34 @@ const AppContextProvider = ({ children }) => {
 
     setFavorites(newFavorites);
   };
+  
+
+  const addToWar = (battle) => {
+    const oldWar = [...war];
+
+    const newWar = oldWar.concat(battle);
+
+    setWar(newWar);
+  };
+
+  const removeFromWar = (id) => {
+    const oldWar = [...war];
+
+    const newWar = oldWar.filter((battle) => battle.id !== id);
+
+    setWar(newWar);
+  };
 
   return (
     <AppContext.Provider
-      value={{favorites, addToFavorites, removeFromFavorites}}
+      value={{
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
+        war,
+        addToWar,
+        removeFromWar,
+      }}
     >
       {children}
     </AppContext.Provider>

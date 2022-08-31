@@ -25,8 +25,17 @@ const Mypokemon = ({ poki, name }) => {
   console.log("favorites are : ", favorites);
 
   const favoritesChecker = (id) => {
-    const boolean = favorites.some((book) => book.id === id);
+    const boolean = favorites.some((poke) => poke.id === id);
     return boolean;
+  };
+
+  const { war, addToWar, removeFromWar } = useAppContext();
+
+  console.log("war is of : ", war);
+
+  const playerChecker = (id) => {
+    const bool = war.some((battle) => battle.id === id);
+    return bool;
   };
 
   return (
@@ -63,12 +72,20 @@ const Mypokemon = ({ poki, name }) => {
               <BsFillHeartFill size={25} />
             </button>
           )}
-
-          <Link to={"/war"}>
-            <button className="bg-white s p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
+          {playerChecker(list.id) ? (
+            <button
+              onClick={() => removeFromWar(list.id)}
+              className="bg-red-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
+            >
               <GiAxeSword size={25} />
             </button>
-          </Link>
+          ) : (
+            <button
+            onClick={() => addToWar(list)}
+             className="bg-white s p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
+              <GiAxeSword size={25} />
+            </button>
+          )}
         </div>
       </div>
     </>
