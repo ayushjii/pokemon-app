@@ -16,7 +16,7 @@ export const AddFavorites = () => {
                   alt="Loading..."
                 />
               </div>
-              <p className="text-sm md:text-base text-cyan-300 capitalize p-2 mb-4">
+              <p className="text-4xl  md:text-base text-cyan-300 capitalize p-2 mb-4">
                 You have not edited your favorite pokemon
               </p>
               <Link
