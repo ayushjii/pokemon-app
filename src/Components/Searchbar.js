@@ -35,7 +35,7 @@ export const Searchbar = () => {
         className="my-12 gap-8 flex justify-center text-center"
       >
         <Link
-          className="shadow hover:shadow-99xl capitalize flex bg-white text-4xl rounded-xl px-0.5 items-center"
+          className="shadow hover:shadow-99xl s capitalize flex bg-white text-4xl rounded-xl px-0.5 items-center"
           to={"/favorites"}
         >
           favorites
@@ -63,7 +63,7 @@ export const Searchbar = () => {
           )}
         />
 
-        <button type="submit" className="shadow hover:shadow-99xl">
+        <button type="submit" className="shadow s hover:shadow-99xl">
           <FcSearch className="bg-white rounded-lg" size={55} />
         </button>
       </form>

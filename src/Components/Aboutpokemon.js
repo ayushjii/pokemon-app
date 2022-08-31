@@ -34,7 +34,7 @@ function Aboutpokemon() {
           <div className="m-3">
             <div className="m-3">
               <Link to={"/"}>
-                <button className="flex text-blue-700">
+                <button className="flex s text-blue-700">
                   <TiArrowBack size={20} /> Back
                 </button>
               </Link>

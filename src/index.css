@@ -98,8 +98,8 @@ code {
   text-align: center;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.89);
 }
-.type:hover{
-  box-shadow: 6px 6px 6px rgba(1,0,0,0.2);
+.type:hover {
+  box-shadow: 6px 6px 6px rgba(1, 0, 0, 0.2);
 }
 .moves:nth-child(n + 7) {
   display: none;
@@ -129,4 +129,8 @@ code {
   100% {
     transform: translateX(-150px);
   }
+}
+
+.s:active {
+  transform: matrix(0.95, 0, 0, 0.95, 0, 0);
 }
