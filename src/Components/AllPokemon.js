@@ -41,7 +41,7 @@ export default class All extends Component {
               {this.state.pokemon.map((pokemon, i) => (
                 <>
                   <button key={i}>
-                    <Mypokemon poki={pokemon} name={pokemon.name} />
+                    <Mypokemon pop={pokemon} name={pokemon.name} />
                   </button>
                  
                 </>

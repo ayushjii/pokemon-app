@@ -6,9 +6,9 @@ import { BsFillHeartFill } from "react-icons/bs";
 import { useAppContext } from "../Context/appContext";
 import { BiMessageSquareDetail } from "react-icons/bi";
 
-const Mypokemon = ({ poki, name }) => {
+const Mypokemon = ({ name, pop }) => {
   const [list, setList] = useState([]);
-
+  //  console.log(pop)
   useEffect(() => {
     api_details.get(name).then(({ data }) => {
       setList(data);
@@ -22,7 +22,7 @@ const Mypokemon = ({ poki, name }) => {
 
   const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
 
-  console.log("favorites are : ", favorites);
+  // console.log("favorites are : ", favorites);
 
   const favoritesChecker = (id) => {
     const boolean = favorites.some((poke) => poke.id === id);
@@ -31,13 +31,13 @@ const Mypokemon = ({ poki, name }) => {
 
   const { war, addToWar, removeFromWar } = useAppContext();
 
-  console.log("war is of : ", war);
+  // console.log("war is of : ", war);
 
   const playerChecker = (id) => {
     const bool = war.some((battle) => battle.id === id);
     return bool;
   };
-
+console.log(list, "kl")
   return (
     <>
       <div className={style}>
@@ -73,16 +73,29 @@ const Mypokemon = ({ poki, name }) => {
             </button>
           )}
           {playerChecker(list.id) ? (
-            <button
-              onClick={() => removeFromWar(list.id)}
-              className="bg-red-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
-            >
-              <GiAxeSword size={25} />
-            </button>
+            list > 0 ? (
+              <>
+                <button
+                  onClick={() => removeFromWar(list.id)}
+                  className="bg-blue-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
+                >
+                  <GiAxeSword size={25} />
+                </button>
+                gfgdhg
+              </>
+            ) : (
+              <button
+                onClick={() => removeFromWar(list.id)}
+                className="bg-red-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
+              >
+                <GiAxeSword size={25} />
+              </button>
+            )
           ) : (
             <button
-            onClick={() => addToWar(list)}
-             className="bg-white s p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
+              onClick={() => addToWar(list)}
+              className="bg-white s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
+            >
               <GiAxeSword size={25} />
             </button>
           )}

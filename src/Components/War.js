@@ -25,10 +25,9 @@ const War = () => {
     const boolean = favorites.some((poke) => poke.id === id);
     return boolean;
   };
-
+// console.log(war , "hi")
   return (
     <>
-      {" "}
       <div className="">
         <Link to={"/"}>
           <button className="flex absolute bg-white s m-3 p-4 rounded-lg  text-red-700">
@@ -37,7 +36,7 @@ const War = () => {
         </Link>
       </div>
       <div className="text-center">
-        {war.length > 0 ? (
+        {war.length < 3 ? (
           war.map((battle) => (
             <button>
               <div
@@ -98,7 +97,7 @@ const War = () => {
             </button>
           ))
         ) : (
-          <AddFavorites />
+          <>qydfyfdyf</>
         )}
       </div>
     </>
