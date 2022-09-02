@@ -57,7 +57,7 @@ export const WarPokemon = () => {
               <div className="odd:bg-red-600 flex flex-col odd:bg-opacity-90 m-2 rounded-lg items-center p-4 text-center even:bg-opacity-90 even:bg-blue-600 ">
                 <h1 className="capitalize font-bold text-4xl">{battle.name}</h1>
                 <img
-                  className="w-64 h-64 "
+                  className="w-64 h-64"
                   src={battle?.sprites?.front_default}
                   alt={battle.name}
                 />
@@ -72,7 +72,7 @@ export const WarPokemon = () => {
                     )}
                   </label>
                   <progress
-                    className="text-xl rounded-2xl bg-slate-300 p-1.5"
+                    className="text-xl w-24 md:w-60 rounded-2xl bg-slate-300 p-1.5"
                     id="file"
                     value={battle.stats.reduce(
                       (acc, curr) => (acc += curr.base_stat),
@@ -85,7 +85,7 @@ export const WarPokemon = () => {
             ))
           ) : (
             <div className="text-center capitalize text-green-500">
-              ADD less pokemon
+            please  Add less pokemon
             </div>
           )
         ) : (

@@ -22,7 +22,7 @@ function Aboutpokemon() {
   }, [name]);
 
   const style = `type ${list?.types?.map((item) =>
-    item.type.name.concat(" ")
+    item.type.name.concat(" ") 
   )}`;
 
   return (
@@ -30,7 +30,7 @@ function Aboutpokemon() {
       {error && <ErrorPage />}
 
       {!error && (
-        <div className="flex justify-between bg-white m-6 rounded-2xl">
+        <div className="flex flex-col md:flex-row justify-between bg-white m-6 rounded-2xl">
           <div className="m-3">
             <div className="m-3">
               <Link to={"/"}>
@@ -39,7 +39,7 @@ function Aboutpokemon() {
                 </button>
               </Link>
             </div>
-            <div className="text-8xl uppercase text-center m-12">
+            <div className="text-2xl md:text-8xl uppercase text-center m-12">
               <h1 className={style}>{list.name}</h1>
             </div>
             <div className="text-center flex justify-center">
@@ -52,7 +52,7 @@ function Aboutpokemon() {
                 <h3 className="text-2xl">Weight : {list.weight * 0.1} kg</h3>
               </div>
             </div>
-            <div className="flex justify-between">
+            <div className="flex flex-col md:flex-row justify-between">
               <div className="ml-4 mb-4">
                 <div className="text-center">
                   <h1 className="font-semibold my-4 text-4xl text-red-500">
@@ -82,15 +82,15 @@ function Aboutpokemon() {
               </div>
               <div className="ml-12 mb-4">
                 <div className="text-center">
-                  <h1 className="font-semibold my-4 text-4xl text-red-500">
+                  <h1 className="font-semibold my-4 text-center text-4xl text-red-500">
                     Moves
                   </h1>
                 </div>
-                <div className="flex">
+                <div className="flex text-center">
                   {list?.moves?.map((item) => {
                     return (
                       <div key={item.move.name} className="moves">
-                        <button className="hover:bg-cyan-600 hover:shadow-69xl bg-cyan-500 rounded-md p-1 m-1">
+                        <button className="hover:bg-cyan-600 text-center hover:shadow-69xl bg-cyan-500 rounded-md p-1 m-1">
                           {item.move.name}
                         </button>
                       </div>
@@ -100,13 +100,13 @@ function Aboutpokemon() {
               </div>
             </div>
           </div>
-          <div className="mr-8 mt-8">
+          <div className="mr-8 mt-8 text-center">
             <div className={style}>
               <img src={list?.sprites?.front_default} className="w-52 h-52" alt={list.name} />
             </div>
             <div>
-              <h1 className="capitalize font-bold text-xl">
-                Pokemon Type :{" "}
+              <h1 className="capitalize my-4 text-center font-bold text-xl">
+                Pokemon Type :
                 {list?.types?.map((poke) => poke.type.name.concat(" "))}
               </h1>
             </div>

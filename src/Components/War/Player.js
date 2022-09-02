@@ -33,16 +33,16 @@ export const Player = () => {
                 <div className="rounded-2xl px-2 py-1 bg-white bg-opacity-40">
                   <small className="font-semibold">#{battle.id}</small>
                 </div>
-                <h1 className="capitalize">{battle.name}</h1>
+                <h1 className="capitalize text-xl">{battle.name}</h1>
                 <img
                   className="w-52 h-52"
                   src={battle?.sprites?.front_default}
                   alt={battle.name}
                 />
-                <h3>
+                <h3 className="capitalize">
                   {battle?.types?.map((item) => item.type.name.concat(" "))}
                 </h3>
-                <div className="mt-0.5">
+                <div className="mt-1">
                   <Link to={"/pokemon/" + battle.name}>
                     <button className="bg-white s p-1.5 rounded-md shadow hover:shadow-69xl mx-2">
                       <BiMessageSquareDetail size={25} />

@@ -43,16 +43,16 @@ const Favorites = () => {
                 <div className="rounded-2xl px-2 py-1 bg-white bg-opacity-40">
                   <small className="font-semibold">#{poke.id}</small>
                 </div>
-                <h1 className="capitalize">{poke.name}</h1>
+                <h1 className="capitalize text-xl">{poke.name}</h1>
                 <img
                   className="w-52 h-52"
                   src={poke?.sprites?.front_default}
                   alt={poke.name}
                 />
-                <h3>
+                <h3 className="capitalize">
                   {poke?.types?.map((item) => item.type.name.concat(" "))}
                 </h3>
-                <div className="mt-0.5">
+                <div className="mt-1">
                   <Link to={"/pokemon/" + poke.name}>
                     <button className="bg-white p-1.5 rounded-md s shadow hover:shadow-69xl mx-2">
                       <BiMessageSquareDetail size={25} />
