@@ -10,16 +10,12 @@ import { TiArrowBack } from "react-icons/ti";
 const Favorites = () => {
   const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
 
-  console.log("favorites are : ", favorites);
-
   const favoritesChecker = (id) => {
     const boolean = favorites.some((book) => book.id === id);
     return boolean;
   };
 
   const { war, addToWar, removeFromWar } = useAppContext();
-
-  console.log("war is of : ", war);
 
   const playerChecker = (id) => {
     const bool = war.some((battle) => battle.id === id);

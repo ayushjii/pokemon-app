@@ -8,7 +8,7 @@ import { BiMessageSquareDetail } from "react-icons/bi";
 
 const Mypokemon = ({ name, pop }) => {
   const [list, setList] = useState([]);
-  //  console.log(pop)
+
   useEffect(() => {
     api_details.get(name).then(({ data }) => {
       setList(data);
@@ -20,28 +20,20 @@ const Mypokemon = ({ name, pop }) => {
     item.type.name.concat(" ")
   )}`;
 
-  //  *************favorites**************
-
   const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
-
-  console.log("favorites are : ", favorites);
 
   const favoritesChecker = (id) => {
     const boolean = favorites.some((poke) => poke.id === id);
     return boolean;
   };
 
-  //  *************war****************
-
   const { war, addToWar, removeFromWar } = useAppContext();
-
-  console.log("war is of : ", war);
 
   const playerChecker = (id) => {
     const bool = war.some((battle) => battle.id === id);
     return bool;
   };
-  // console.log(list, "kl");
+
   return (
     <>
       <div className={style}>
