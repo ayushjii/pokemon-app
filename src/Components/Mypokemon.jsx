@@ -20,24 +20,28 @@ const Mypokemon = ({ name, pop }) => {
     item.type.name.concat(" ")
   )}`;
 
+  //  *************favorites**************
+
   const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
 
-  // console.log("favorites are : ", favorites);
+  console.log("favorites are : ", favorites);
 
   const favoritesChecker = (id) => {
     const boolean = favorites.some((poke) => poke.id === id);
     return boolean;
   };
 
+  //  *************war****************
+
   const { war, addToWar, removeFromWar } = useAppContext();
 
-  // console.log("war is of : ", war);
+  console.log("war is of : ", war);
 
   const playerChecker = (id) => {
     const bool = war.some((battle) => battle.id === id);
     return bool;
   };
-console.log(list, "kl")
+  // console.log(list, "kl");
   return (
     <>
       <div className={style}>
@@ -57,6 +61,9 @@ console.log(list, "kl")
               <BiMessageSquareDetail size={25} />
             </button>
           </Link>
+
+          {/* *************favorites************** */}
+
           {favoritesChecker(list.id) ? (
             <button
               onClick={() => removeFromFavorites(list.id)}
@@ -72,25 +79,16 @@ console.log(list, "kl")
               <BsFillHeartFill size={25} />
             </button>
           )}
+
+          {/* *************war**************** */}
+
           {playerChecker(list.id) ? (
-            list > 0 ? (
-              <>
-                <button
-                  onClick={() => removeFromWar(list.id)}
-                  className="bg-blue-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
-                >
-                  <GiAxeSword size={25} />
-                </button>
-                gfgdhg
-              </>
-            ) : (
-              <button
-                onClick={() => removeFromWar(list.id)}
-                className="bg-red-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
-              >
-                <GiAxeSword size={25} />
-              </button>
-            )
+            <button
+              onClick={() => removeFromWar(list.id)}
+              className="bg-red-500 s p-1.5 rounded-md shadow hover:shadow-69xl mx-2"
+            >
+              <GiAxeSword size={25} />
+            </button>
           ) : (
             <button
               onClick={() => addToWar(list)}

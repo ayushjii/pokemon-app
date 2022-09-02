@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aboutpokemon from "./Components/Aboutpokemon";
 import { Home } from "./Components/Home";
-import War from "./Components/War";
+import { Battle } from "./Components/Battle";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/pokemon/" element={<Aboutpokemon />} />
         <Route path="/favorites" element={<Favorite />} />
-        <Route path="/war" element={<War />} />
+        <Route path="/war" element={<Battle/>} />
         <Route path="/pokemon/:name" element={<Aboutpokemon />} />
         <Route path="/" element={<Home />} />
       </Routes>
