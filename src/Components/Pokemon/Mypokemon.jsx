@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import api_details from "../API/Api_details";
+import api_details from "../../API/Api_details";
 import { GiAxeSword } from "react-icons/gi";
 import { BsFillHeartFill } from "react-icons/bs";
-import { useAppContext } from "../Context/appContext";
+import { useAppContext } from "../../Context/appContext";
 import { BiMessageSquareDetail } from "react-icons/bi";
 
 const Mypokemon = ({ name, pop }) => {

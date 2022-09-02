@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppContext } from "../Context/appContext";
+import { useAppContext } from "../../Context/appContext";
 import { GiAxeSword } from "react-icons/gi";
 import { BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";

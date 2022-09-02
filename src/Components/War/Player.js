@@ -1,6 +1,6 @@
 import React from "react";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { useAppContext } from "../Context/appContext";
+import { useAppContext } from "../../Context/appContext";
 import { GiAxeSword } from "react-icons/gi";
 import { BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -83,7 +83,7 @@ export const Player = () => {
             </button>
           ))
         ) : (
-          <div className="text-center">Players not found</div>
+          <div className="text-center mt-7 text-red-600">Players not found !!</div>
         )}
       </div>
     </div>

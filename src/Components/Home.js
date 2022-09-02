@@ -1,7 +1,7 @@
 import React from "react";
 import ScrollToTop from "react-scroll-to-top";
-import All from "./AllPokemon";
-import { Searchbar } from "./Searchbar";
+import All from "./Pokemon/AllPokemon";
+import { Searchbar } from "./Pokemon/Searchbar";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 export const Home = () => {

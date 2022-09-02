@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import api_details from "../API/Api_details";
+import api_details from "../../API/Api_details";
 import { ErrorPage } from "./ErrorPage";
 import { TiArrowBack } from "react-icons/ti";
 import { GiBodyHeight, GiWeight } from "react-icons/gi";

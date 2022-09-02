@@ -2,7 +2,6 @@ import React from "react";
 import { WarPokemon } from "./WarPokemon";
 
 const War = () => {
-  // console.log(war , "hi")
   return (
     <>
       <div className="justify-between bg-white p-3 m-6 rounded-2xl">
