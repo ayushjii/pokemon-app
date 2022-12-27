@@ -43,7 +43,7 @@ const Mypokemon = ({ name, pop }) => {
         <h1 className="capitalize text-xl">{list.name}</h1>
         <img
           className="w-52 h-52"
-          src={list?.sprites?.front_default}
+          src={'https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/'+list.id+'.svg'}
           alt={list.name}
         />
         <h3 className="capitalize">{list?.types?.map((item) => item.type.name.concat(" "))}</h3>

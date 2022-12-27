@@ -58,7 +58,8 @@ export const WarPokemon = () => {
                 <h1 className="capitalize font-bold text-4xl">{battle.name}</h1>
                 <img
                   className="w-64 h-64"
-                  src={battle?.sprites?.front_default}
+                  // src={battle?.sprites?.front_default}
+                  src={'https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/'+battle.id+'.svg'}
                   alt={battle.name}
                 />
                 <h3 className="capitalize text-lg">

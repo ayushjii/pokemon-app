@@ -36,7 +36,8 @@ export const Player = () => {
                 <h1 className="capitalize text-xl">{battle.name}</h1>
                 <img
                   className="w-52 h-52"
-                  src={battle?.sprites?.front_default}
+                  // src={battle?.sprites?.front_default}
+                  src={'https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/'+battle.id+'.svg'}
                   alt={battle.name}
                 />
                 <h3 className="capitalize">

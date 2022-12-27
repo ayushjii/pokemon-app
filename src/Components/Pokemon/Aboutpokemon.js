@@ -102,7 +102,11 @@ function Aboutpokemon() {
           </div>
           <div className="mr-8 mt-8 text-center">
             <div className={style}>
-              <img src={list?.sprites?.front_default} className="w-52 h-52" alt={list.name} />
+              <img 
+              src={'https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/'+list.id+'.svg'}
+              className="w-52 h-52" 
+              alt={list.name} 
+              />
             </div>
             <div>
               <h1 className="capitalize my-4 text-center font-bold text-xl">
@@ -118,3 +122,8 @@ function Aboutpokemon() {
 }
 
 export default Aboutpokemon;
+
+
+
+
+
