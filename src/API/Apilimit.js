@@ -1,1 +1,1 @@
-export const API = "https://pokeapi.co/api/v2/pokemon/?limit=25" ; 
+export const Apilimit = "https://pokeapi.co/api/v2/pokemon/?limit=25" ; 

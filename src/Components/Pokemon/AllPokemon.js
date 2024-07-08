@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { Component } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import API from "../../API/Apilimit.js";
+import Apilimit from "../../API/Apilimit.js";
 import Mypokemon from "./Mypokemon";
 import Spinner from "./Spinner.js";
 
 
 export default class All extends Component {
   state = {
-    url: API,
+    url: Apilimit,
     pokemon: [],
     itemsCountPerPage: 20,
     activePage: 1,
