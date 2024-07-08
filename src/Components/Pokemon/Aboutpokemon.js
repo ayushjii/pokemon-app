@@ -120,10 +120,4 @@ function Aboutpokemon() {
     </>
   );
 }
-
 export default Aboutpokemon;
-
-
-
-
-
