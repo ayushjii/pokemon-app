@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import { API } from "../../API/api";
+import { API } from "../../API/api.js";
 import Mypokemon from "./Mypokemon";
 import Spinner from "./Spinner.js";
 
